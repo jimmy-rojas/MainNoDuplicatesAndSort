@@ -1,14 +1,30 @@
 # MainNoDuplicatesAndSort
 
-This project is to solve 2 required steps in java
+This project is to solve 2 required tasks in java
+
+Type of solution: Maven Java Project
 
 ### Prerequisites
 
-Have installed JDK 
+Have installed JDK and maven
+
+```sh
+$ java -version
+openjdk version "11.0.11" 2021-04-20
+```
+
+```sh
+$ mvn -v
+Apache Maven 3.6.3
+```
 
 ### Testing
+junit is used to perform testing, version 4.13
 
-#### Important notes
+In order to run unit tests just execute
+```sh
+$ mvn test
+```
 
 #### Exercise Announcement 
 ```sh
