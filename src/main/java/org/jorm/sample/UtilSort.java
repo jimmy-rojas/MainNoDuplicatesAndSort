@@ -4,17 +4,18 @@ import java.util.Arrays;
 
 public class UtilSort {
 
+    private UtilSort() {}
+
     public static String[] sortValues(String[] input) {
         LetterGrade[] inputConverted = convertToLetterGrade(input);
         Arrays.sort(inputConverted);
-        String[] output = convertToString(inputConverted);
-        return output;
+        return convertToString(inputConverted);
     }
 
     private static LetterGrade[] convertToLetterGrade(String[] input) {
         LetterGrade[] letterGrades = new LetterGrade[input.length];
         for (int i = 0; i < input.length ; i++) {
-            letterGrades[i] = new LetterGrade(input[i].toString());
+            letterGrades[i] = new LetterGrade(input[i]);
         }
         return letterGrades;
     }
@@ -44,8 +45,8 @@ public class UtilSort {
         }
 
         @Override
-        public int compareTo(LetterGrade other) {
-            return this.letter == other.letter ? this.grade - other.grade : this.letter - other.letter;
+        public int compareTo(LetterGrade o) {
+            return this.letter == o.letter ? this.grade - o.grade : this.letter - o.letter;
         }
 
         @Override
