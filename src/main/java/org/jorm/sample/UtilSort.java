@@ -7,6 +7,9 @@ public class UtilSort {
     private UtilSort() {}
 
     public static String[] sortValues(String[] input) {
+        if (input == null || input.length == 0) {
+            return new String[0];
+        }
         LetterGrade[] inputConverted = convertToLetterGrade(input);
         Arrays.sort(inputConverted);
         return convertToString(inputConverted);
