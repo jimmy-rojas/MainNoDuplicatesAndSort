@@ -2,11 +2,14 @@ package org.jorm.sample;
 
 import java.util.Arrays;
 
-public class UtilSort {
+public class LetterGradeProcessor extends AbstractArrayProcessor<String> {
 
-    private UtilSort() {}
+    public LetterGradeProcessor(String[] values) {
+        super(values);
+    }
 
-    public static String[] sortValues(String[] input) {
+    @Override
+    protected String[] obtainSorted(Object[] input) {
         if (input == null || input.length == 0) {
             return new String[0];
         }
@@ -15,15 +18,15 @@ public class UtilSort {
         return convertToString(inputConverted);
     }
 
-    private static LetterGrade[] convertToLetterGrade(String[] input) {
+    private LetterGrade[] convertToLetterGrade(Object[] input) {
         LetterGrade[] letterGrades = new LetterGrade[input.length];
         for (int i = 0; i < input.length ; i++) {
-            letterGrades[i] = new LetterGrade(input[i]);
+            letterGrades[i] = new LetterGrade(String.valueOf(input[i]));
         }
         return letterGrades;
     }
 
-    private static String[] convertToString(LetterGrade[] inputConverted) {
+    private String[] convertToString(LetterGrade[] inputConverted) {
         String[] strings = new String[inputConverted.length];
         for (int i = 0; i < inputConverted.length ; i++) {
             strings[i] = inputConverted[i].toString();
